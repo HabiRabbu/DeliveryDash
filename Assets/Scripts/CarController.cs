@@ -141,7 +141,7 @@ public class CarController : MonoBehaviour
 
     void Brake()
     {
-        bool isBraking = Keyboard.current.spaceKey.isPressed || Gamepad.current.aButton.isPressed;
+        bool isBraking = (Keyboard.current?.spaceKey?.isPressed ?? false) || (Gamepad.current?.aButton?.isPressed ?? false);
         float torque = isBraking ? 300 * brakeAcceleration : 0f;
 
         foreach (var wheel in wheels)
