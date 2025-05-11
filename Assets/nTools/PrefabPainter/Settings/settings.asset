@@ -23,7 +23,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -294,38 +293,38 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 1524878645038815076, guid: 087104c3e46c6c74d9cd2e5b6e575eb7, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 1524878645038815076, guid: 087104c3e46c6c74d9cd2e5b6e575eb7, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -338,7 +337,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -609,38 +607,38 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 2801491559797646317, guid: 5f9802618498ea446aadc1c0e5dfe0e2, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 2801491559797646317, guid: 5f9802618498ea446aadc1c0e5dfe0e2, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -653,7 +651,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -924,38 +921,38 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 2628522531857105260, guid: 45ca7c0552cffa84ab871b0b92a5c07d, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 2628522531857105260, guid: 45ca7c0552cffa84ab871b0b92a5c07d, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -968,7 +965,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -1239,38 +1235,38 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 1298520128684083998, guid: 950fa29d4e99ac1408f9168fc95b207c, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 1298520128684083998, guid: 950fa29d4e99ac1408f9168fc95b207c, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 1
       colorTag: 0
@@ -1283,7 +1279,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -1554,38 +1549,38 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 4288595268365314260, guid: fc57436dc38828041b853053df75461b, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 4288595268365314260, guid: fc57436dc38828041b853053df75461b, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -1598,7 +1593,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -1869,38 +1863,38 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 9131870090412497756, guid: d8ce1a486aa50e840a7266d9512aa125, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 9131870090412497756, guid: d8ce1a486aa50e840a7266d9512aa125, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -1913,7 +1907,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -2184,38 +2177,38 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 3925337865961707016, guid: 7c47e8084740c7048a8337ad9aadc5df, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 3925337865961707016, guid: 7c47e8084740c7048a8337ad9aadc5df, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -2235,7 +2228,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0.2
         orientationTransformMode: 0
@@ -2352,16 +2344,16 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 124718, guid: 826898d6c67534099ae1c62db6396484, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 124718, guid: 826898d6c67534099ae1c62db6396484, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -2374,7 +2366,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0.2
         orientationTransformMode: 0
@@ -2491,16 +2482,16 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 167392, guid: 62b4cd3ac819640e49ea9de71d47400c, type: 3}
-      - gameObject: {fileID: 135010, guid: 01f4555e876dc457fb72a6fddd3dea58, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 167392, guid: 62b4cd3ac819640e49ea9de71d47400c, type: 3}}
+      - {gameObject: {fileID: 135010, guid: 01f4555e876dc457fb72a6fddd3dea58, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 1
       selected: 0
       colorTag: 0
@@ -2513,7 +2504,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0.2
         orientationTransformMode: 0
@@ -2630,16 +2620,16 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 140332, guid: 388a4661237104b49b1ede1cda315eb6, type: 3}
-      - gameObject: {fileID: 199396, guid: 9561f2160ee6343b287375c0c4787967, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 140332, guid: 388a4661237104b49b1ede1cda315eb6, type: 3}}
+      - {gameObject: {fileID: 199396, guid: 9561f2160ee6343b287375c0c4787967, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 1
       selected: 0
       colorTag: 0
@@ -2652,7 +2642,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0.2
         orientationTransformMode: 0
@@ -2769,16 +2758,16 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 150248, guid: fccdaf2af7593429990a3f305d8fefa2, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 150248, guid: fccdaf2af7593429990a3f305d8fefa2, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -2791,7 +2780,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0.2
         orientationTransformMode: 0
@@ -2908,16 +2896,16 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 100044, guid: 74dd510445e38470dbda34cbd3419c2d, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 100044, guid: 74dd510445e38470dbda34cbd3419c2d, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -2930,7 +2918,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0.2
         orientationTransformMode: 0
@@ -3047,16 +3034,16 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 180820, guid: d56ef037a2ece46958febec692c028c9, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 180820, guid: d56ef037a2ece46958febec692c028c9, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 1
       colorTag: 0
@@ -3076,7 +3063,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -3347,38 +3333,38 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 8054450359665032828, guid: 0c68f3bd6baea644bb01f34c77ea35e1, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 8054450359665032828, guid: 0c68f3bd6baea644bb01f34c77ea35e1, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 1
       colorTag: 0
@@ -3398,7 +3384,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -3515,16 +3500,16 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 152170, guid: 13209b503b9464a889e6cdcd72c36431, type: 3}
-      - gameObject: {fileID: 171914, guid: 84a4a2a0b8dfe40e289fd2d4812d4019, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 152170, guid: 13209b503b9464a889e6cdcd72c36431, type: 3}}
+      - {gameObject: {fileID: 171914, guid: 84a4a2a0b8dfe40e289fd2d4812d4019, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -3537,7 +3522,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 0
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -3654,16 +3638,16 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 3995375172139233161, guid: 2775c26e84b054356801677a43337ef5, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 3995375172139233161, guid: 2775c26e84b054356801677a43337ef5, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -3676,7 +3660,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -3793,16 +3776,16 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 5121792053650911359, guid: 2bf9cf2ab57374cc0bd173227f593e11, type: 3}
-      - gameObject: {fileID: 1500413753295065714, guid: 21931cfe3cae34bd9a826707883dbdce, type: 3}
-      - gameObject: {fileID: 1732320645968458946, guid: 9b29c018d8b234e2c8468c8ee78f3f18, type: 3}
-      - gameObject: {fileID: 4244195985474975456, guid: cd9a0ed516cdd4b76a0070280139496d, type: 3}
-      - gameObject: {fileID: 6823240390559314668, guid: e51a37bcc81e8447ba329ac52a59897a, type: 3}
-      - gameObject: {fileID: 6220326741828520350, guid: 5fe35a31ea3e54d81b646b823679426f, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 5121792053650911359, guid: 2bf9cf2ab57374cc0bd173227f593e11, type: 3}}
+      - {gameObject: {fileID: 1500413753295065714, guid: 21931cfe3cae34bd9a826707883dbdce, type: 3}}
+      - {gameObject: {fileID: 1732320645968458946, guid: 9b29c018d8b234e2c8468c8ee78f3f18, type: 3}}
+      - {gameObject: {fileID: 4244195985474975456, guid: cd9a0ed516cdd4b76a0070280139496d, type: 3}}
+      - {gameObject: {fileID: 6823240390559314668, guid: e51a37bcc81e8447ba329ac52a59897a, type: 3}}
+      - {gameObject: {fileID: 6220326741828520350, guid: 5fe35a31ea3e54d81b646b823679426f, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -3815,7 +3798,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -3932,16 +3914,16 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 6461832190177709707, guid: b1a7023ae95504990b85830956b5db29, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 6461832190177709707, guid: b1a7023ae95504990b85830956b5db29, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 0
       selected: 0
       colorTag: 0
@@ -3954,7 +3936,6 @@ MonoBehaviour:
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
-          serializedVersion: 2
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
@@ -4071,16 +4052,16 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 85133633994234828, guid: 80bd617a1597f4350b98c07b85d60a05, type: 3}
-      - gameObject: {fileID: 7337436880604310812, guid: aae38cd2299054ce9a800d5aadc0e100, type: 3}
-      - gameObject: {fileID: 29270360122064922, guid: 8f1f768a561714ad09e362c746ee7d95, type: 3}
-      - gameObject: {fileID: 2044340557379106779, guid: a2fa6ff3c15d6494c9050e9e701060c1, type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - {gameObject: {fileID: 85133633994234828, guid: 80bd617a1597f4350b98c07b85d60a05, type: 3}}
+      - {gameObject: {fileID: 7337436880604310812, guid: aae38cd2299054ce9a800d5aadc0e100, type: 3}}
+      - {gameObject: {fileID: 29270360122064922, guid: 8f1f768a561714ad09e362c746ee7d95, type: 3}}
+      - {gameObject: {fileID: 2044340557379106779, guid: a2fa6ff3c15d6494c9050e9e701060c1, type: 3}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
+      - {gameObject: {fileID: 0}}
       selectedSlot: 3
       selected: 0
       colorTag: 0
@@ -4093,10 +4074,8 @@ MonoBehaviour:
   activeTab: 2
   paintOnSelected: 0
   paintLayers:
-    serializedVersion: 2
     m_Bits: 1
   ignoreLayers:
-    serializedVersion: 2
     m_Bits: 32
   placeUnder: 2
   overwritePrefabLayer: 1
@@ -4110,18 +4089,15 @@ MonoBehaviour:
   eraseBrushRadius: 5
   eraseByLayer: 1
   eraseLayers:
-    serializedVersion: 2
     m_Bits: 32
   selectBrushRadius: 5
   selectByLayer: 0
   selectLayers:
-    serializedVersion: 2
     m_Bits: 32
   modifyBrushRadius: 5
   modifyStrength: 1
   modifyByLayer: 0
   modifyLayers:
-    serializedVersion: 2
     m_Bits: 32
   modifyPivotMode: 3
   modifyRandomRotation: 0
@@ -4145,7 +4121,11 @@ MonoBehaviour:
   groupPrefabs: 1
   groupName: _group
   gridRaycastHeight: 5
-  handlesColor: {r: 1, g: 0, b: 0, a: 1}
+  handlesColor:
+    r: 1
+    g: 0
+    b: 0
+    a: 1
   useAdditionalVertexStreams: 0
   enableToolsShortcuts: 0
   disableUndo: 0
