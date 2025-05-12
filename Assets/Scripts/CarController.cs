@@ -37,6 +37,12 @@ public class CarController : MonoBehaviour
     [Header("Wheels")]
     public List<Wheel> wheels;
 
+    [Header("Speed Control")]
+    [SerializeField] private float maxSpeed = 100f;
+    [SerializeField] private AnimationCurve accelerationCurve;
+
+    [SerializeField] private float jumpForce = 200f;
+
     private CarControls controls;
     private Vector2 moveVector;
     private float moveInput;
@@ -59,6 +65,9 @@ public class CarController : MonoBehaviour
         controls = new CarControls();
         controls.Gameplay.Move.performed += ctx => moveVector = ctx.ReadValue<Vector2>();
         controls.Gameplay.Move.canceled += ctx => moveVector = Vector2.zero;
+
+        controls.Gameplay.Jump.performed += _ => TryJump();
+
     }
 
     private void OnEnable() => controls.Gameplay.Enable();
@@ -73,6 +82,20 @@ public class CarController : MonoBehaviour
 
         SetupWheelFriction();
     }
+
+    bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, 1.5f);
+    }
+
+    void TryJump()
+    {
+        if (IsGrounded())
+        {
+            carRigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+
 
     void SetupWheelFriction()
     {
@@ -118,14 +141,23 @@ public class CarController : MonoBehaviour
 
     void Move()
     {
+        float speed = carRigidBody.linearVelocity.magnitude;
+        Debug.Log("Speed: " + speed);
+
+        if (speed >= maxSpeed && moveInput > 0f)
+            return;
+
+        float accelFactor = accelerationCurve.Evaluate(speed);
+
         foreach (var wheel in wheels)
         {
-            if (wheel.axel == Axel.Rear) //TODO: Make this togglable (FWD, RWD, AWD)
+            if (wheel.axel == Axel.Rear) // Add AWD Later?
             {
-                wheel.wheelCollider.motorTorque = moveInput * maxAcceleration * torqueConstant;
-                // wheel.wheelCollider.brakeTorque = 0;
+                wheel.wheelCollider.motorTorque = moveInput * maxAcceleration * torqueConstant * accelFactor;
             }
         }
+
+        Debug.Log(accelFactor);
     }
 
     void Steer()
@@ -144,34 +176,34 @@ public class CarController : MonoBehaviour
         }
     }
 
-void Brake()
-{
-    bool isBraking = (Keyboard.current?.spaceKey?.isPressed ?? false) || (Gamepad.current?.aButton?.isPressed ?? false);
-    float torque = isBraking ? 300 * brakeAcceleration : 0f;
-    float speed = carRigidBody.linearVelocity.magnitude;
-
-    foreach (var wheel in wheels)
+    void Brake()
     {
-        wheel.wheelCollider.brakeTorque = torque;
+        bool isBraking = (Keyboard.current?.spaceKey?.isPressed ?? false) || (Gamepad.current?.aButton?.isPressed ?? false);
+        float torque = isBraking ? 300 * brakeAcceleration : 0f;
+        float speed = carRigidBody.linearVelocity.magnitude;
 
-        var forwardFriction = wheel.wheelCollider.forwardFriction;
-        var sidewaysFriction = wheel.wheelCollider.sidewaysFriction;
-
-        if (isBraking)
+        foreach (var wheel in wheels)
         {
-            forwardFriction.stiffness = Mathf.Lerp(forwardStiffness, brakeForwardStiffness, speed / 50f);
-            sidewaysFriction.stiffness = Mathf.Lerp(sidewaysStiffness, brakeSidewaysStiffness, speed / 50f);
-        }
-        else
-        {
-            forwardFriction.stiffness = forwardStiffness;
-            sidewaysFriction.stiffness = sidewaysStiffness;
-        }
+            wheel.wheelCollider.brakeTorque = torque;
 
-        wheel.wheelCollider.forwardFriction = forwardFriction;
-        wheel.wheelCollider.sidewaysFriction = sidewaysFriction;
+            var forwardFriction = wheel.wheelCollider.forwardFriction;
+            var sidewaysFriction = wheel.wheelCollider.sidewaysFriction;
+
+            if (isBraking)
+            {
+                forwardFriction.stiffness = Mathf.Lerp(forwardStiffness, brakeForwardStiffness, speed / 50f);
+                sidewaysFriction.stiffness = Mathf.Lerp(sidewaysStiffness, brakeSidewaysStiffness, speed / 50f);
+            }
+            else
+            {
+                forwardFriction.stiffness = forwardStiffness;
+                sidewaysFriction.stiffness = sidewaysStiffness;
+            }
+
+            wheel.wheelCollider.forwardFriction = forwardFriction;
+            wheel.wheelCollider.sidewaysFriction = sidewaysFriction;
+        }
     }
-}
 
 
     void AnimateWheels()
@@ -200,7 +232,7 @@ void Brake()
 
         foreach (var wheel in wheels)
         {
-            if (isBraking && wheel.axel == Axel.Rear)
+            if (isBraking && wheel.axel == Axel.Rear && IsGrounded())
             {
                 wheel.wheelEffectObj.GetComponentInChildren<TrailRenderer>().emitting = true;
             }
