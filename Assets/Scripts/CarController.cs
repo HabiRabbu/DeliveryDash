@@ -57,6 +57,7 @@ public class CarController : MonoBehaviour
         public GameObject wheelModel;
         public WheelCollider wheelCollider;
         public GameObject wheelEffectObj;
+        public ParticleSystem smokeEffect;
         public Axel axel;
     }
 
@@ -232,9 +233,10 @@ public class CarController : MonoBehaviour
 
         foreach (var wheel in wheels)
         {
-            if (isBraking && wheel.axel == Axel.Rear && IsGrounded())
+            if (isBraking && wheel.axel == Axel.Rear && IsGrounded() && carRigidBody.linearVelocity.magnitude >= 5.0f)
             {
                 wheel.wheelEffectObj.GetComponentInChildren<TrailRenderer>().emitting = true;
+                wheel.smokeEffect.Emit(1);
             }
             else
             {
