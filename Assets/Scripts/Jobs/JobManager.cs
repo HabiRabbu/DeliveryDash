@@ -24,6 +24,7 @@ public class JobManager : MonoBehaviour
 
 
     // Accepting Jobs
+
     private List<DeliveryJob> availableJobs = new List<DeliveryJob>();
     [Header("Spawn Timing")]
     [SerializeField] float minSpawnInterval = 10f, maxSpawnInterval = 30f;
@@ -35,7 +36,6 @@ public class JobManager : MonoBehaviour
     [SerializeField] GameObject availableEntryPrefab;
     [SerializeField] Transform activeContainer;
     [SerializeField] GameObject activeEntryPrefab;
-
 
     // ---------
 
@@ -53,7 +53,6 @@ public class JobManager : MonoBehaviour
 
     private void Start()
     {
-        AcceptRandomJob();
         StartCoroutine(SpawnOffers());
     }
 
@@ -183,7 +182,7 @@ public class JobManager : MonoBehaviour
                || activeJobs.Exists(j => j.pickupZone == pu && j.dropoffZone == doff));
 
         // create the job
-        var job = new DeliveryJob(Guid.NewGuid().ToString(), pu, doff, Random.Range(minDeliveryTime, maxDeliveryTime));
+        var job = new DeliveryJob(System.Guid.NewGuid().ToString(), pu, doff, Random.Range(minDeliveryTime, maxDeliveryTime));
         availableJobs.Add(job);
 
         // instantiate UI entry
@@ -226,7 +225,7 @@ public class JobManager : MonoBehaviour
         if (debug) Debug.Log($"Denied {job.id}");
     }
 
-    //TODO: Build the “Offer” UI Prefab
+    // ---------
 
     public IReadOnlyList<DeliveryJob> GetActiveJobs() => activeJobs;
 }
