@@ -2,27 +2,40 @@ using UnityEngine;
 
 public enum ZoneType { Pickup, Deliver }
 
+[RequireComponent(typeof(Collider))]
 public class DeliveryZone : MonoBehaviour
 {
     public ZoneType zoneType;
-    public string zoneName = "placeholder"; //TODO: If it's a delivery location, pick a random name from a json list (e.g. Kelly, Fritz, Robert) - "Deliver to Robert"
+    public string zoneName = "placeholder";
+    MeshRenderer rend;
+
+    void Awake()
+    {
+        rend = GetComponent<MeshRenderer>();
+        rend.enabled = false;  // start invisible
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"Player collided with {zoneName} - BEFORE CompareTag check");
         if (!other.CompareTag("Player")) return;
-
-        Debug.Log($"Player collided with {zoneName}");
         JobManager.Instance.HandleZoneTrigger(this);
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnDrawGizmos()
     {
-        if (!other.CompareTag("Player")) return;
-        Debug.Log($"Exited {zoneName}");
+        var col = GetComponent<Collider>();
+        if (col != null)
+        {
+            Gizmos.color = zoneType == ZoneType.Pickup ? Color.green : Color.blue;
+            Gizmos.DrawWireCube(col.bounds.center, col.bounds.size);
+        }
+    }
+
+    void OnEnable()
+    {
+        JobManager.Instance.UpdateZoneIndicators(); // refresh on load
     }
 }
-
 
 //TODO: Organise with this at some point?
 

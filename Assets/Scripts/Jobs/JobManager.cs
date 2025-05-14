@@ -4,23 +4,22 @@ using UnityEngine;
 public class JobManager : MonoBehaviour
 {
 
-    public static JobManager Instance;
+    public static JobManager Instance { get; private set; }
 
-    [SerializeField] private bool debug = false;
+    [Header("Zone Roots")]
+    [SerializeField] private Transform pickupLocationsRoot;
+    [SerializeField] private Transform deliveryLocationsRoot;
 
-    [Header("Delivery Zones")]
-    [SerializeField] private Transform pickupLocations;
-    [SerializeField] private Transform deliveryLocations;
-
-    [Header("Delivery Jobs")]
-    public DeliveryJob currentJob; //TODO: MAKE THIS A LIST - MULTIPLE JOBS AT ONCE
-
-    [Header("Tuning")]
+    [Header("Job Timing")]
     [SerializeField] private float minDeliveryTime = 60f;
     [SerializeField] private float maxDeliveryTime = 200f;
 
+    [Header("Debug")]
+    [SerializeField] private bool debug = false;
+
     private List<DeliveryZone> pickupZones;
     private List<DeliveryZone> deliveryZones;
+    private List<DeliveryJob> activeJobs = new List<DeliveryJob>();
 
     private void Awake()
     {
@@ -30,8 +29,28 @@ public class JobManager : MonoBehaviour
             return;
         }
         Instance = this;
-
         SetZones();
+    }
+
+    private void Start()
+    {
+        AcceptRandomJob();
+    }
+
+    private void Update()
+    {
+        float dt = Time.deltaTime;
+        for (int i = activeJobs.Count - 1; i >= 0; i--)
+        {
+            var job = activeJobs[i];
+            job.UpdateTimer(dt);
+            if (job.State == JobState.Expired)
+            {
+                if (debug) Debug.Log($"Job expired: {job.id}");
+                activeJobs.RemoveAt(i);
+                // TODO: Notify UI of expiration
+            }
+        }
     }
 
     private void SetZones()
@@ -39,84 +58,86 @@ public class JobManager : MonoBehaviour
         pickupZones = new List<DeliveryZone>();
         deliveryZones = new List<DeliveryZone>();
 
-        foreach (Transform child in pickupLocations)
+        foreach (Transform child in pickupLocationsRoot)
         {
             var zone = child.GetComponentInChildren<DeliveryZone>();
             if (zone != null && zone.zoneType == ZoneType.Pickup)
                 pickupZones.Add(zone);
-            else if (debug)
-                Debug.LogWarning($"Missing or incorrect DeliveryZone on {child.name}");
         }
-
-        foreach (Transform child in deliveryLocations)
+        foreach (Transform child in deliveryLocationsRoot)
         {
             var zone = child.GetComponentInChildren<DeliveryZone>();
             if (zone != null && zone.zoneType == ZoneType.Deliver)
                 deliveryZones.Add(zone);
-            else if (debug)
-                Debug.LogWarning($"Missing or incorrect DeliveryZone on {child.name}");
         }
-
         if (debug)
             Debug.Log($"Found {pickupZones.Count} pickup zones and {deliveryZones.Count} delivery zones.");
     }
 
-    private void Start()
+    public void AcceptRandomJob()
     {
-        AssignNewRandomJob();
-    }
-
-    public void AssignNewRandomJob()
-    {
-        if (pickupZones.Count == 0 || deliveryZones.Count == 0)
-        {
-            Debug.LogWarning("Zones not set correctly.");
-            return;
-        }
+        if (pickupZones.Count == 0 || deliveryZones.Count == 0) return;
 
         var pickup = pickupZones[Random.Range(0, pickupZones.Count)];
         var dropoff = deliveryZones[Random.Range(0, deliveryZones.Count)];
-
         if (pickup == dropoff)
         {
-            AssignNewRandomJob();
+            AcceptRandomJob();
             return;
         }
 
-        currentJob = new DeliveryJob(
+        var job = new DeliveryJob(
             System.Guid.NewGuid().ToString(),
             pickup,
             dropoff,
-            Random.Range(60f, 200f)
+            Random.Range(minDeliveryTime, maxDeliveryTime)
         );
-
-        Debug.Log($"New Job: Pickup at {pickup.zoneName}, dropoff at {dropoff.zoneName}");
+        activeJobs.Add(job);
+        if (debug)
+            Debug.Log($"Accepted job {job.id}: {pickup.zoneName} -> {dropoff.zoneName}");
+        // TODO: Notify UI of new job
     }
 
     public void HandleZoneTrigger(DeliveryZone zone)
     {
-        if (debug) { Debug.Log($"Player collided with {zone.zoneName}"); }
+        for (int i = activeJobs.Count - 1; i >= 0; i--)
+        {
+            var job = activeJobs[i];
 
-        if (currentJob == null || !currentJob.isActive)
-        {
-            // Only allow pickup at this point
-            if (zone == currentJob.pickupZone)
+            // Pickup
+            if (job.State == JobState.PendingPickup && job.pickupZone == zone)
             {
-                currentJob.isActive = true;
-                Debug.Log("Job started. Get to dropoff!");
-                //TODO: Start timer
+                job.Pickup();
+                if (debug) Debug.Log($"Picked up job {job.id}");
+                // TODO: Give package, update UI
+            }
+            // Dropoff
+            else if (job.State == JobState.PendingDropoff && job.dropoffZone == zone)
+            {
+                job.Deliver();
+                if (debug) Debug.Log($"Delivered job {job.id}");
+                activeJobs.RemoveAt(i);
+                // TODO: Reward player, update UI
             }
         }
-        else
-        {
-            if (zone == currentJob.dropoffZone)
-            {
-                Debug.Log("Job complete!");
-                currentJob = null;
-                AssignNewRandomJob();
-            }
-        }
-        Debug.Log($"Pickup zone collider enabled: {currentJob.pickupZone.GetComponent<Collider>().enabled}");
-        Debug.Log($"DeliveryZone component enabled: {currentJob.pickupZone.enabled}");
     }
+
+    public void UpdateZoneIndicators()
+    {
+        // pickups
+        foreach (var zone in pickupZones)
+        {
+            bool show = activeJobs.Exists(j => j.State == JobState.PendingPickup && j.pickupZone == zone);
+            zone.GetComponent<MeshRenderer>().enabled = show;
+        }
+        // dropoffs
+        foreach (var zone in deliveryZones)
+        {
+            bool show = activeJobs.Exists(j => j.State == JobState.PendingDropoff && j.dropoffZone == zone);
+            zone.GetComponent<MeshRenderer>().enabled = show;
+        }
+    }
+
+
+    public IReadOnlyList<DeliveryJob> GetActiveJobs() => activeJobs;
 }
