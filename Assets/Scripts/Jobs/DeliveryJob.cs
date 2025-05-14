@@ -9,9 +9,9 @@ public class DeliveryJob {
 
     public DeliveryJob(string id, DeliveryZone pickup, DeliveryZone dropoff, float timeLimit) {
         this.id = id;
-        pickupZone = pickup;
-        dropoffZone = dropoff;
+        this.pickupZone = pickup;
+        this.dropoffZone = dropoff;
         this.timeLimit = timeLimit;
-        isActive = false;
+        this.isActive = false;
     }
 }

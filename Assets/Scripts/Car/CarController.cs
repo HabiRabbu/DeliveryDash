@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class CarController : MonoBehaviour
 {
+    [SerializeField] private bool debug = false;
 
     [Header("Vehicle Settings")]
     [SerializeField] private float maxAcceleration = 30.0f;
@@ -143,7 +144,7 @@ public class CarController : MonoBehaviour
     void Move()
     {
         float speed = carRigidBody.linearVelocity.magnitude;
-        Debug.Log("Speed: " + speed);
+        if (debug){Debug.Log("Speed: " + speed);}
 
         if (speed >= maxSpeed && moveInput > 0f)
             return;
@@ -158,7 +159,7 @@ public class CarController : MonoBehaviour
             }
         }
 
-        Debug.Log(accelFactor);
+        if (debug){Debug.Log(accelFactor);}
     }
 
     void Steer()

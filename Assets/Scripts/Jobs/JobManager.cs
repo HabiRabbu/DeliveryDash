@@ -6,9 +6,11 @@ public class JobManager : MonoBehaviour
 
     public static JobManager Instance;
 
+    [SerializeField] private bool debug = false;
+
     [Header("Delivery Zones")]
-    [SerializeField] public List<DeliveryZone> pickupZones;
-    [SerializeField] public List<DeliveryZone> dropoffZones;
+    [SerializeField] private Transform pickupLocations;
+    [SerializeField] private Transform deliveryLocations;
 
     [Header("Delivery Jobs")]
     public DeliveryJob currentJob; //TODO: MAKE THIS A LIST - MULTIPLE JOBS AT ONCE
@@ -16,6 +18,9 @@ public class JobManager : MonoBehaviour
     [Header("Tuning")]
     [SerializeField] private float minDeliveryTime = 60f;
     [SerializeField] private float maxDeliveryTime = 200f;
+
+    private List<DeliveryZone> pickupZones;
+    private List<DeliveryZone> deliveryZones;
 
     private void Awake()
     {
@@ -25,6 +30,35 @@ public class JobManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        SetZones();
+    }
+
+    private void SetZones()
+    {
+        pickupZones = new List<DeliveryZone>();
+        deliveryZones = new List<DeliveryZone>();
+
+        foreach (Transform child in pickupLocations)
+        {
+            var zone = child.GetComponentInChildren<DeliveryZone>();
+            if (zone != null && zone.zoneType == ZoneType.Pickup)
+                pickupZones.Add(zone);
+            else if (debug)
+                Debug.LogWarning($"Missing or incorrect DeliveryZone on {child.name}");
+        }
+
+        foreach (Transform child in deliveryLocations)
+        {
+            var zone = child.GetComponentInChildren<DeliveryZone>();
+            if (zone != null && zone.zoneType == ZoneType.Deliver)
+                deliveryZones.Add(zone);
+            else if (debug)
+                Debug.LogWarning($"Missing or incorrect DeliveryZone on {child.name}");
+        }
+
+        if (debug)
+            Debug.Log($"Found {pickupZones.Count} pickup zones and {deliveryZones.Count} delivery zones.");
     }
 
     private void Start()
@@ -34,14 +68,14 @@ public class JobManager : MonoBehaviour
 
     public void AssignNewRandomJob()
     {
-        if (pickupZones.Count == 0 || dropoffZones.Count == 0)
+        if (pickupZones.Count == 0 || deliveryZones.Count == 0)
         {
             Debug.LogWarning("Zones not set correctly.");
             return;
         }
 
         var pickup = pickupZones[Random.Range(0, pickupZones.Count)];
-        var dropoff = dropoffZones[Random.Range(0, dropoffZones.Count)];
+        var dropoff = deliveryZones[Random.Range(0, deliveryZones.Count)];
 
         if (pickup == dropoff)
         {
@@ -61,6 +95,8 @@ public class JobManager : MonoBehaviour
 
     public void HandleZoneTrigger(DeliveryZone zone)
     {
+        if (debug) { Debug.Log($"Player collided with {zone.zoneName}"); }
+
         if (currentJob == null || !currentJob.isActive)
         {
             // Only allow pickup at this point
@@ -80,5 +116,7 @@ public class JobManager : MonoBehaviour
                 AssignNewRandomJob();
             }
         }
+        Debug.Log($"Pickup zone collider enabled: {currentJob.pickupZone.GetComponent<Collider>().enabled}");
+        Debug.Log($"DeliveryZone component enabled: {currentJob.pickupZone.enabled}");
     }
 }
