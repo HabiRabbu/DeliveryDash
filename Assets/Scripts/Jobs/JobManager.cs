@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class JobManager : MonoBehaviour
 {
-
     public static JobManager Instance { get; private set; }
 
     [Header("Zone Roots")]
@@ -18,27 +19,21 @@ public class JobManager : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private bool debug = false;
 
+    // Caches for zones and jobs
     private List<DeliveryZone> pickupZones;
     private List<DeliveryZone> deliveryZones;
     private List<DeliveryJob> activeJobs = new List<DeliveryJob>();
 
-
-    // Accepting Jobs
-
+    [Header("Offers & UI")]
     private List<DeliveryJob> availableJobs = new List<DeliveryJob>();
-    [Header("Spawn Timing")]
-    [SerializeField] float minSpawnInterval = 10f, maxSpawnInterval = 30f;
-    [Header("Accept Window")]
-    [SerializeField] float acceptDuration = 20f;
+    [SerializeField] private float minSpawnInterval = 10f, maxSpawnInterval = 30f;
+    [SerializeField] private float acceptDuration = 20f;
+    [SerializeField] private Transform availableContainer;
+    [SerializeField] private GameObject availableEntryPrefab;
+    [SerializeField] private Transform activeContainer;
+    [SerializeField] private GameObject activeEntryPrefab;
 
-    [Header("UI Prefabs & Parents")]
-    [SerializeField] Transform availableContainer;
-    [SerializeField] GameObject availableEntryPrefab;
-    [SerializeField] Transform activeContainer;
-    [SerializeField] GameObject activeEntryPrefab;
-
-    // ---------
-
+    private Coroutine offerSpawner;
 
     private void Awake()
     {
@@ -48,17 +43,29 @@ public class JobManager : MonoBehaviour
             return;
         }
         Instance = this;
-        SetZones();
+        InitializeZones();
+        // TODO: validate that pickupLocationsRoot and deliveryLocationsRoot are assigned to avoid null refs
     }
 
     private void Start()
     {
-        StartCoroutine(SpawnOffers());
+        // Begin spawning occasional job offers
+        offerSpawner = StartCoroutine(SpawnOffers());
+
+        // Ensure zones reflect current jobs (initial sync)
+        UpdateZoneIndicators();
+    }
+
+    private void OnDisable()
+    {
+        if (offerSpawner != null)
+            StopCoroutine(offerSpawner);
     }
 
     private void Update()
     {
         float dt = Time.deltaTime;
+        // Iterate backwards to safely remove expired jobs
         for (int i = activeJobs.Count - 1; i >= 0; i--)
         {
             var job = activeJobs[i];
@@ -67,12 +74,13 @@ public class JobManager : MonoBehaviour
             {
                 if (debug) Debug.Log($"Job expired: {job.id}");
                 activeJobs.RemoveAt(i);
-                // TODO: Notify UI of expiration
+                UpdateZoneIndicators();
+                // TODO: Notify UI of expiration via event rather than polling
             }
         }
     }
 
-    private void SetZones()
+    private void InitializeZones()
     {
         pickupZones = new List<DeliveryZone>();
         deliveryZones = new List<DeliveryZone>();
@@ -93,108 +101,99 @@ public class JobManager : MonoBehaviour
             Debug.Log($"Found {pickupZones.Count} pickup zones and {deliveryZones.Count} delivery zones.");
     }
 
-    public void AcceptRandomJob()
-    {
-        if (pickupZones.Count == 0 || deliveryZones.Count == 0) return;
-
-        var pickup = pickupZones[Random.Range(0, pickupZones.Count)];
-        var dropoff = deliveryZones[Random.Range(0, deliveryZones.Count)];
-        if (pickup == dropoff)
-        {
-            AcceptRandomJob();
-            return;
-        }
-
-        var job = new DeliveryJob(
-            System.Guid.NewGuid().ToString(),
-            pickup,
-            dropoff,
-            Random.Range(minDeliveryTime, maxDeliveryTime)
-        );
-        activeJobs.Add(job);
-        if (debug)
-            Debug.Log($"Accepted job {job.id}: {pickup.zoneName} -> {dropoff.zoneName}");
-        // TODO: Notify UI of new job
-    }
-
+    /// <summary>
+    /// Handle player entering any DeliveryZone.
+    /// </summary>
     public void HandleZoneTrigger(DeliveryZone zone)
     {
         for (int i = activeJobs.Count - 1; i >= 0; i--)
         {
             var job = activeJobs[i];
 
-            // Pickup
+            // Pickup phase
             if (job.State == JobState.PendingPickup && job.pickupZone == zone)
             {
                 job.Pickup();
                 if (debug) Debug.Log($"Picked up job {job.id}");
-                // TODO: Give package, update UI
+                UpdateZoneIndicators();
+                // TODO: decouple UI updates from game logic (use events)
             }
-            // Dropoff
+            // Dropoff phase
             else if (job.State == JobState.PendingDropoff && job.dropoffZone == zone)
             {
                 job.Deliver();
                 if (debug) Debug.Log($"Delivered job {job.id}");
                 activeJobs.RemoveAt(i);
-                // TODO: Reward player, update UI
+                UpdateZoneIndicators();
+                // TODO: consider pooling job entries instead of destroy/instantiate for performance
             }
         }
     }
 
+    /// <summary>
+    /// Refresh visual indicators on all zones based on job states.
+    /// </summary>
     public void UpdateZoneIndicators()
     {
-        // pickups
+        // Show pickups
         foreach (var zone in pickupZones)
         {
             bool show = activeJobs.Exists(j => j.State == JobState.PendingPickup && j.pickupZone == zone);
-            zone.GetComponent<MeshRenderer>().enabled = show;
+            zone.SetIndicator(show);
         }
-        // dropoffs
+        // Show dropoffs
         foreach (var zone in deliveryZones)
         {
             bool show = activeJobs.Exists(j => j.State == JobState.PendingDropoff && j.dropoffZone == zone);
-            zone.GetComponent<MeshRenderer>().enabled = show;
+            zone.SetIndicator(show);
         }
     }
 
-    //Job Offers
+    // ---- Job Offers Logic ----
     private IEnumerator SpawnOffers()
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(minSpawnInterval, maxSpawnInterval));
+            yield return new WaitForSeconds(UnityEngine.Random.Range(minSpawnInterval, maxSpawnInterval));
             SpawnOffer();
         }
     }
 
-    void SpawnOffer()
+    private void SpawnOffer()
     {
-        // pick random pickup/dropoff zones
-        DeliveryZone pu, doff;
-        do
+        // Build list of valid pairs; consider caching or limiting frequency to reduce allocations
+        var validPairs = new List<KeyValuePair<DeliveryZone, DeliveryZone>>();
+        foreach (var pu in pickupZones)
         {
-            pu = pickupZones[Random.Range(0, pickupZones.Count)];
-            doff = deliveryZones[Random.Range(0, deliveryZones.Count)];
+            foreach (var doff in deliveryZones)
+            {
+                if (pu == doff) continue;
+                if (availableJobs.Any(j => j.pickupZone == pu && j.dropoffZone == doff) ||
+                    activeJobs.Any(j => j.pickupZone == pu && j.dropoffZone == doff))
+                    continue;
+                validPairs.Add(new KeyValuePair<DeliveryZone, DeliveryZone>(pu, doff));
+            }
         }
-        // ensure not the same zone and not duplicated
-        while (pu == doff
-               || availableJobs.Exists(j => j.pickupZone == pu && j.dropoffZone == doff)
-               || activeJobs.Exists(j => j.pickupZone == pu && j.dropoffZone == doff));
+        if (validPairs.Count == 0)
+        {
+            if (debug) Debug.Log("No more unique jobs available.");
+            return;
+        }
 
-        // create the job
-        var job = new DeliveryJob(System.Guid.NewGuid().ToString(), pu, doff, Random.Range(minDeliveryTime, maxDeliveryTime));
+        var choice = validPairs[UnityEngine.Random.Range(0, validPairs.Count)];
+        var job = new DeliveryJob(Guid.NewGuid().ToString(), choice.Key, choice.Value, UnityEngine.Random.Range(minDeliveryTime, maxDeliveryTime));
         availableJobs.Add(job);
 
-        // instantiate UI entry
-        var entryGO = Instantiate(availableEntryPrefab, availableContainer);
-        var entry = entryGO.GetComponent<AvailableJobEntry>();
-        entry.Setup(job, OnAccept, OnDeny);
+        // Instantiate UI entry; consider object pooling for frequent spawns/despawn
+        var entryGO = Instantiate(availableEntryPrefab);
+        entryGO.transform.SetParent(availableContainer, false);
+        entryGO.GetComponent<AvailableJobEntry>().Setup(job, OnAccept, OnDeny);
 
-        // auto-expire if untaken
+        // Auto-expire
         StartCoroutine(AutoExpire(job, entryGO));
     }
 
-    IEnumerator AutoExpire(DeliveryJob job, GameObject entryGO)
+    private IEnumerator AutoExpire(DeliveryJob job, GameObject entryGO)
     {
         yield return new WaitForSeconds(acceptDuration);
         if (availableJobs.Remove(job))
@@ -204,28 +203,27 @@ public class JobManager : MonoBehaviour
         }
     }
 
-    void OnAccept(DeliveryJob job, GameObject entryGO)
+    private void OnAccept(DeliveryJob job, GameObject entryGO)
     {
         availableJobs.Remove(job);
         Destroy(entryGO);
 
         activeJobs.Add(job);
-        if (debug) Debug.Log($"Accepted {job.id}");
+        if (debug) Debug.Log($"Accepted job {job.id}");
         UpdateZoneIndicators();
 
-        // create an active-job UI entry
-        var go = Instantiate(activeEntryPrefab, activeContainer);
+        // Instantiate active job UI entry
+        var go = Instantiate(activeEntryPrefab);
+        go.transform.SetParent(activeContainer, false);
         go.GetComponent<ActiveJobEntry>().Setup(job);
     }
 
-    void OnDeny(DeliveryJob job, GameObject entryGO)
+    private void OnDeny(DeliveryJob job, GameObject entryGO)
     {
         availableJobs.Remove(job);
         Destroy(entryGO);
-        if (debug) Debug.Log($"Denied {job.id}");
+        if (debug) Debug.Log($"Denied job {job.id}");
     }
-
-    // ---------
 
     public IReadOnlyList<DeliveryJob> GetActiveJobs() => activeJobs;
 }

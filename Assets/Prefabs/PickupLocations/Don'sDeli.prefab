@@ -227,6 +227,10 @@ PrefabInstance:
       propertyPath: zoneName
       value: Don's Deli
       objectReference: {fileID: 0}
+    - target: {fileID: 8975290414090910890, guid: 4fc86217cf7fb4144ad733cb54aceb3a, type: 3}
+      propertyPath: indicatorRenderer
+      value: 
+      objectReference: {fileID: 8479800989584995464}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -235,6 +239,11 @@ PrefabInstance:
 --- !u!4 &6762179343596495020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 573042670909874805, guid: 4fc86217cf7fb4144ad733cb54aceb3a, type: 3}
+  m_PrefabInstance: {fileID: 6497512343033135833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8479800989584995464 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3424287258907047505, guid: 4fc86217cf7fb4144ad733cb54aceb3a, type: 3}
   m_PrefabInstance: {fileID: 6497512343033135833}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7459417583362700219

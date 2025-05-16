@@ -165,11 +165,20 @@ PrefabInstance:
       propertyPath: zoneType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8975290414090910890, guid: 4fc86217cf7fb4144ad733cb54aceb3a, type: 3}
+      propertyPath: indicatorRenderer
+      value: 
+      objectReference: {fileID: 1041046234900226483}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc86217cf7fb4144ad733cb54aceb3a, type: 3}
+--- !u!23 &1041046234900226483 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3424287258907047505, guid: 4fc86217cf7fb4144ad733cb54aceb3a, type: 3}
+  m_PrefabInstance: {fileID: 2447434914706003938}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2739545729776874903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 573042670909874805, guid: 4fc86217cf7fb4144ad733cb54aceb3a, type: 3}

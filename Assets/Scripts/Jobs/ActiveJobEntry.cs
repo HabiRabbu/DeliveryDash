@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ActiveJobEntry : MonoBehaviour {
     [SerializeField] TMP_Text routeTxt, timerTxt;
@@ -13,7 +12,7 @@ public class ActiveJobEntry : MonoBehaviour {
 
     void Update() {
         if (job.State == JobState.Expired || job.State == JobState.Completed) {
-            Destroy(gameObject);
+            Destroy(gameObject); // consider pooling instead of destroy
             return;
         }
 

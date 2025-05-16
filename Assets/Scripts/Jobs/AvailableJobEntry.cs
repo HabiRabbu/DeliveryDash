@@ -30,4 +30,8 @@ public class AvailableJobEntry : MonoBehaviour {
             yield return null;
         }
     }
+
+    private void OnDestroy() {
+        StopAllCoroutines(); // prevent coroutine running after destroy
+    }
 }

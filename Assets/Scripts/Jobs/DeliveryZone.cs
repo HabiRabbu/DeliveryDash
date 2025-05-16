@@ -7,18 +7,30 @@ public class DeliveryZone : MonoBehaviour
 {
     public ZoneType zoneType;
     public string zoneName = "placeholder";
-    MeshRenderer rend;
 
-    void Awake()
+    [SerializeField] private MeshRenderer indicatorRenderer;
+
+    private void Awake()
     {
-        rend = GetComponent<MeshRenderer>();
-        rend.enabled = false;  // start invisible
+        if (indicatorRenderer != null)
+            indicatorRenderer.enabled = false;
+        else
+            Debug.LogWarning($"DeliveryZone '{gameObject.name}' has no indicatorRenderer assigned.");
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
         JobManager.Instance.HandleZoneTrigger(this);
+    }
+
+    /// <summary>
+    /// Enable or disable the visible indicator mesh.
+    /// </summary>
+    public void SetIndicator(bool show)
+    {
+        if (indicatorRenderer != null)
+            indicatorRenderer.enabled = show;
     }
 
     private void OnDrawGizmos()
@@ -30,18 +42,4 @@ public class DeliveryZone : MonoBehaviour
             Gizmos.DrawWireCube(col.bounds.center, col.bounds.size);
         }
     }
-
-    void OnEnable()
-    {
-        JobManager.Instance.UpdateZoneIndicators(); // refresh on load
-    }
 }
-
-//TODO: Organise with this at some point?
-
-// private void OnValidate() {
-//     if (zoneType == ZoneType.Pickup)
-//         gameObject.name = $"PickupZone_{zoneName}";
-//     else
-//         gameObject.name = $"DropoffZone_{zoneName}";
-// }
