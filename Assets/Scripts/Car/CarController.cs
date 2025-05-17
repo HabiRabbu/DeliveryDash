@@ -44,7 +44,7 @@ public class CarController : MonoBehaviour
 
     [SerializeField] private float jumpForce = 200f;
 
-    private CarControls controls;
+    private PlayerControls controls;
     private Vector2 moveVector;
     private float moveInput;
     private float steerInput;
@@ -64,7 +64,7 @@ public class CarController : MonoBehaviour
 
     void Awake()
     {
-        controls = new CarControls();
+        controls = new PlayerControls();
         controls.Gameplay.Move.performed += ctx => moveVector = ctx.ReadValue<Vector2>();
         controls.Gameplay.Move.canceled += ctx => moveVector = Vector2.zero;
 
