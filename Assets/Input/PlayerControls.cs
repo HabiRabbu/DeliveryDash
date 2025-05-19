@@ -246,6 +246,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AcceptJob"",
+                    ""type"": ""Button"",
+                    ""id"": ""2c7dc241-fa1c-40c9-847d-cd3038ef958b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DeclineJob"",
+                    ""type"": ""Button"",
+                    ""id"": ""2260a88b-7303-4ab2-bbc0-7d231d75300a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -257,6 +275,61 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""DisplayPhone"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a2e5afe-30e1-4d57-ba57-1aad5bf3b815"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DisplayPhone"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""360f6080-f9aa-4d14-b77c-9261e151a931"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AcceptJob"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71beabab-2885-4c1a-bd82-d4571a99304f"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AcceptJob"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf7b3bdf-e565-4532-96c6-2cd14fb8a4ad"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DeclineJob"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""644cd9cc-366f-4641-9a44-a9bf7cd5c8eb"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DeclineJob"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -272,6 +345,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_DisplayPhone = m_UI.FindAction("DisplayPhone", throwIfNotFound: true);
+        m_UI_AcceptJob = m_UI.FindAction("AcceptJob", throwIfNotFound: true);
+        m_UI_DeclineJob = m_UI.FindAction("DeclineJob", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
@@ -461,6 +536,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_DisplayPhone;
+    private readonly InputAction m_UI_AcceptJob;
+    private readonly InputAction m_UI_DeclineJob;
     /// <summary>
     /// Provides access to input actions defined in input action map "UI".
     /// </summary>
@@ -476,6 +553,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "UI/DisplayPhone".
         /// </summary>
         public InputAction @DisplayPhone => m_Wrapper.m_UI_DisplayPhone;
+        /// <summary>
+        /// Provides access to the underlying input action "UI/AcceptJob".
+        /// </summary>
+        public InputAction @AcceptJob => m_Wrapper.m_UI_AcceptJob;
+        /// <summary>
+        /// Provides access to the underlying input action "UI/DeclineJob".
+        /// </summary>
+        public InputAction @DeclineJob => m_Wrapper.m_UI_DeclineJob;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -505,6 +590,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @DisplayPhone.started += instance.OnDisplayPhone;
             @DisplayPhone.performed += instance.OnDisplayPhone;
             @DisplayPhone.canceled += instance.OnDisplayPhone;
+            @AcceptJob.started += instance.OnAcceptJob;
+            @AcceptJob.performed += instance.OnAcceptJob;
+            @AcceptJob.canceled += instance.OnAcceptJob;
+            @DeclineJob.started += instance.OnDeclineJob;
+            @DeclineJob.performed += instance.OnDeclineJob;
+            @DeclineJob.canceled += instance.OnDeclineJob;
         }
 
         /// <summary>
@@ -519,6 +610,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @DisplayPhone.started -= instance.OnDisplayPhone;
             @DisplayPhone.performed -= instance.OnDisplayPhone;
             @DisplayPhone.canceled -= instance.OnDisplayPhone;
+            @AcceptJob.started -= instance.OnAcceptJob;
+            @AcceptJob.performed -= instance.OnAcceptJob;
+            @AcceptJob.canceled -= instance.OnAcceptJob;
+            @DeclineJob.started -= instance.OnDeclineJob;
+            @DeclineJob.performed -= instance.OnDeclineJob;
+            @DeclineJob.canceled -= instance.OnDeclineJob;
         }
 
         /// <summary>
@@ -588,5 +685,19 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDisplayPhone(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "AcceptJob" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnAcceptJob(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "DeclineJob" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDeclineJob(InputAction.CallbackContext context);
     }
 }
