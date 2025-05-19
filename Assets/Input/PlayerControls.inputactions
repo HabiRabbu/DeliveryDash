@@ -1,5 +1,5 @@
 {
-    "name": "CarControls",
+    "name": "PlayerControls",
     "maps": [
         {
             "name": "Gameplay",
@@ -143,6 +143,107 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "3206b547-3167-4825-9c74-c4e2104b32c5",
+            "actions": [
+                {
+                    "name": "DisplayPhone",
+                    "type": "Button",
+                    "id": "97b1e21a-8e69-46ff-8652-5669453d902b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AcceptJob",
+                    "type": "Button",
+                    "id": "2c7dc241-fa1c-40c9-847d-cd3038ef958b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DeclineJob",
+                    "type": "Button",
+                    "id": "2260a88b-7303-4ab2-bbc0-7d231d75300a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "639bfe9b-2de2-4ae3-b522-a6ddfd123f06",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DisplayPhone",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6a2e5afe-30e1-4d57-ba57-1aad5bf3b815",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DisplayPhone",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "360f6080-f9aa-4d14-b77c-9261e151a931",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AcceptJob",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71beabab-2885-4c1a-bd82-d4571a99304f",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AcceptJob",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf7b3bdf-e565-4532-96c6-2cd14fb8a4ad",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DeclineJob",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "644cd9cc-366f-4641-9a44-a9bf7cd5c8eb",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DeclineJob",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
