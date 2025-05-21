@@ -1,0 +1,373 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8e55bcd28196e45a6c5725670041fa, type: 3}
+  m_Name: MainRoadNetworkSO
+  m_EditorClassIdentifier: 
+  nodes:
+  - position: {x: 1629.9554, y: 8.26782, z: 1624.0184}
+    outgoingLaneIndices: 000000000000000001000000
+    incomingLaneIndices: 
+  - position: {x: 1616.8285, y: 8.323116, z: 1598.9583}
+    outgoingLaneIndices: 010000000200000003000000
+    incomingLaneIndices: 000000000000000001000000
+  - position: {x: 1600.7368, y: 8.364529, z: 1578.8505}
+    outgoingLaneIndices: 020000000400000005000000
+    incomingLaneIndices: 010000000200000003000000
+  - position: {x: 1579.4552, y: 8.234556, z: 1551.9833}
+    outgoingLaneIndices: 
+    incomingLaneIndices: 020000000400000005000000
+  - position: {x: 1614.495, y: 8.266416, z: 1624.4905}
+    outgoingLaneIndices: 030000000600000007000000
+    incomingLaneIndices: 
+  - position: {x: 1599.2433, y: 8.233535, z: 1599.2731}
+    outgoingLaneIndices: 040000000800000009000000
+    incomingLaneIndices: 030000000600000007000000
+  - position: {x: 1582.4883, y: 8.233535, z: 1582.3219}
+    outgoingLaneIndices: 050000000a0000000b000000
+    incomingLaneIndices: 040000000800000009000000
+  - position: {x: 1561.2188, y: 8.233535, z: 1573.3478}
+    outgoingLaneIndices: 
+    incomingLaneIndices: 050000000a0000000b000000
+  - position: {x: 1525.9894, y: 8.233535, z: 1549.133}
+    outgoingLaneIndices: 060000000c0000000d000000
+    incomingLaneIndices: 
+  - position: {x: 1527.5735, y: 8.233535, z: 1554.3513}
+    outgoingLaneIndices: 070000000e0000000f000000
+    incomingLaneIndices: 060000000c0000000d000000
+  - position: {x: 1534.0198, y: 8.233535, z: 1560.1099}
+    outgoingLaneIndices: 080000001000000011000000
+    incomingLaneIndices: 070000000e0000000f000000
+  - position: {x: 1543.8384, y: 8.233535, z: 1565.3673}
+    outgoingLaneIndices: 090000001200000013000000
+    incomingLaneIndices: 080000001000000011000000
+  - position: {x: 1555.7241, y: 8.233535, z: 1570.9374}
+    outgoingLaneIndices: 
+    incomingLaneIndices: 090000001200000013000000
+  - position: {x: 1570.3856, y: 8.292435, z: 1545.7592}
+    outgoingLaneIndices: 0a0000001400000015000000
+    incomingLaneIndices: 
+  - position: {x: 1551.3759, y: 8.646657, z: 1532.8752}
+    outgoingLaneIndices: 0b0000001600000017000000
+    incomingLaneIndices: 0a0000001400000015000000
+  - position: {x: 1543.9344, y: 8.235884, z: 1527.17}
+    outgoingLaneIndices: 0c0000001800000019000000
+    incomingLaneIndices: 0b0000001600000017000000
+  - position: {x: 1536.2318, y: 8.233535, z: 1526.5564}
+    outgoingLaneIndices: 0d0000001a0000001b000000
+    incomingLaneIndices: 0c0000001800000019000000
+  - position: {x: 1529.7336, y: 8.233535, z: 1533.2142}
+    outgoingLaneIndices: 
+    incomingLaneIndices: 0d0000001a0000001b000000
+  - position: {x: 1567.4865, y: 8.233535, z: 1561.146}
+    outgoingLaneIndices: 0e0000001c0000001d000000
+    incomingLaneIndices: 
+  - position: {x: 1563.5355, y: 8.233535, z: 1558.1537}
+    outgoingLaneIndices: 0f0000001e0000001f000000
+    incomingLaneIndices: 0e0000001c0000001d000000
+  - position: {x: 1557.6398, y: 8.233535, z: 1554.9478}
+    outgoingLaneIndices: 100000002000000021000000
+    incomingLaneIndices: 0f0000001e0000001f000000
+  - position: {x: 1546.7952, y: 8.233535, z: 1549.7981}
+    outgoingLaneIndices: 110000002200000023000000
+    incomingLaneIndices: 100000002000000021000000
+  - position: {x: 1530.4401, y: 8.233535, z: 1541.4893}
+    outgoingLaneIndices: 
+    incomingLaneIndices: 110000002200000023000000
+  lanes:
+  - startNodeIndex: 0
+    endNodeIndex: 1
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1632.6129, y: 8.26782, z: 1622.6263}
+    - {x: 1626.0494, y: 8.295468, z: 1610.0962}
+    - {x: 1619.486, y: 8.323116, z: 1597.5662}
+  - startNodeIndex: 0
+    endNodeIndex: 1
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1627.298, y: 8.26782, z: 1625.4105}
+    - {x: 1620.7345, y: 8.295468, z: 1612.8804}
+    - {x: 1614.171, y: 8.323116, z: 1600.3503}
+  - startNodeIndex: 1
+    endNodeIndex: 2
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1619.1708, y: 8.323116, z: 1597.0837}
+    - {x: 1611.125, y: 8.3438225, z: 1587.0298}
+    - {x: 1603.0791, y: 8.364529, z: 1576.976}
+  - startNodeIndex: 1
+    endNodeIndex: 2
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1614.4862, y: 8.323116, z: 1600.8328}
+    - {x: 1606.4404, y: 8.3438225, z: 1590.7788}
+    - {x: 1598.3945, y: 8.364529, z: 1580.725}
+  - startNodeIndex: 2
+    endNodeIndex: 3
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1603.0885, y: 8.364529, z: 1576.9877}
+    - {x: 1592.4476, y: 8.299542, z: 1563.5541}
+    - {x: 1581.8069, y: 8.234556, z: 1550.1205}
+  - startNodeIndex: 2
+    endNodeIndex: 3
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1598.3851, y: 8.364529, z: 1580.7133}
+    - {x: 1587.7443, y: 8.299542, z: 1567.2797}
+    - {x: 1577.1035, y: 8.234556, z: 1553.8461}
+  - startNodeIndex: 4
+    endNodeIndex: 5
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1617.062, y: 8.266416, z: 1622.9379}
+    - {x: 1609.4362, y: 8.249975, z: 1610.3292}
+    - {x: 1601.8103, y: 8.233535, z: 1597.7205}
+  - startNodeIndex: 4
+    endNodeIndex: 5
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1611.928, y: 8.266416, z: 1626.0431}
+    - {x: 1604.3021, y: 8.249975, z: 1613.4344}
+    - {x: 1596.6763, y: 8.233535, z: 1600.8257}
+  - startNodeIndex: 5
+    endNodeIndex: 6
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1601.377, y: 8.233535, z: 1597.1642}
+    - {x: 1592.9994, y: 8.233535, z: 1588.6886}
+    - {x: 1584.622, y: 8.233535, z: 1580.213}
+  - startNodeIndex: 5
+    endNodeIndex: 6
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1597.1096, y: 8.233535, z: 1601.382}
+    - {x: 1588.732, y: 8.233535, z: 1592.9064}
+    - {x: 1580.3546, y: 8.233535, z: 1584.4308}
+  - startNodeIndex: 6
+    endNodeIndex: 7
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1583.6545, y: 8.233535, z: 1579.5579}
+    - {x: 1573.0198, y: 8.233535, z: 1575.0708}
+    - {x: 1562.385, y: 8.233535, z: 1570.5837}
+  - startNodeIndex: 6
+    endNodeIndex: 7
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1581.322, y: 8.233535, z: 1585.0859}
+    - {x: 1570.6873, y: 8.233535, z: 1580.5989}
+    - {x: 1560.0525, y: 8.233535, z: 1576.1118}
+  - startNodeIndex: 8
+    endNodeIndex: 9
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1523.1188, y: 8.233535, z: 1550.0045}
+    - {x: 1523.9109, y: 8.233535, z: 1552.6136}
+    - {x: 1524.7029, y: 8.233535, z: 1555.2228}
+  - startNodeIndex: 8
+    endNodeIndex: 9
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1528.86, y: 8.233535, z: 1548.2616}
+    - {x: 1529.6521, y: 8.233535, z: 1550.8707}
+    - {x: 1530.4441, y: 8.233535, z: 1553.4799}
+  - startNodeIndex: 9
+    endNodeIndex: 10
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1525.5748, y: 8.233535, z: 1556.5886}
+    - {x: 1528.798, y: 8.233535, z: 1559.4679}
+    - {x: 1532.0211, y: 8.233535, z: 1562.3472}
+  - startNodeIndex: 9
+    endNodeIndex: 10
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1529.5721, y: 8.233535, z: 1552.114}
+    - {x: 1532.7953, y: 8.233535, z: 1554.9933}
+    - {x: 1536.0184, y: 8.233535, z: 1557.8726}
+  - startNodeIndex: 10
+    endNodeIndex: 11
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1532.6036, y: 8.233535, z: 1562.7546}
+    - {x: 1537.513, y: 8.233535, z: 1565.3833}
+    - {x: 1542.4222, y: 8.233535, z: 1568.0121}
+  - startNodeIndex: 10
+    endNodeIndex: 11
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1535.4359, y: 8.233535, z: 1557.4651}
+    - {x: 1540.3452, y: 8.233535, z: 1560.0938}
+    - {x: 1545.2545, y: 8.233535, z: 1562.7225}
+  - startNodeIndex: 11
+    endNodeIndex: 12
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1542.5653, y: 8.233535, z: 1568.0839}
+    - {x: 1548.5082, y: 8.233535, z: 1570.8689}
+    - {x: 1554.451, y: 8.233535, z: 1573.6539}
+  - startNodeIndex: 11
+    endNodeIndex: 12
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1545.1115, y: 8.233535, z: 1562.6508}
+    - {x: 1551.0543, y: 8.233535, z: 1565.4358}
+    - {x: 1556.9972, y: 8.233535, z: 1568.2208}
+  - startNodeIndex: 13
+    endNodeIndex: 14
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1572.0687, y: 8.292435, z: 1543.2758}
+    - {x: 1562.5638, y: 8.469545, z: 1536.8337}
+    - {x: 1553.059, y: 8.646657, z: 1530.3918}
+  - startNodeIndex: 13
+    endNodeIndex: 14
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1568.7025, y: 8.292435, z: 1548.2426}
+    - {x: 1559.1976, y: 8.469545, z: 1541.8005}
+    - {x: 1549.6927, y: 8.646657, z: 1535.3586}
+  - startNodeIndex: 14
+    endNodeIndex: 15
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1553.2012, y: 8.646657, z: 1530.4944}
+    - {x: 1549.4805, y: 8.441271, z: 1527.6418}
+    - {x: 1545.7598, y: 8.235884, z: 1524.7892}
+  - startNodeIndex: 14
+    endNodeIndex: 15
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1549.5505, y: 8.646657, z: 1535.2561}
+    - {x: 1545.8298, y: 8.441271, z: 1532.4036}
+    - {x: 1542.1091, y: 8.235884, z: 1529.5509}
+  - startNodeIndex: 15
+    endNodeIndex: 16
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1544.1727, y: 8.235884, z: 1524.1796}
+    - {x: 1540.3214, y: 8.234709, z: 1523.8728}
+    - {x: 1536.4701, y: 8.233535, z: 1523.5659}
+  - startNodeIndex: 15
+    endNodeIndex: 16
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1543.6962, y: 8.235884, z: 1530.1605}
+    - {x: 1539.8448, y: 8.234709, z: 1529.8538}
+    - {x: 1535.9935, y: 8.233535, z: 1529.5469}
+  - startNodeIndex: 16
+    endNodeIndex: 17
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1534.085, y: 8.233535, z: 1524.4609}
+    - {x: 1530.8358, y: 8.233535, z: 1527.7898}
+    - {x: 1527.5868, y: 8.233535, z: 1531.1188}
+  - startNodeIndex: 16
+    endNodeIndex: 17
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1538.3787, y: 8.233535, z: 1528.6519}
+    - {x: 1535.1295, y: 8.233535, z: 1531.9807}
+    - {x: 1531.8805, y: 8.233535, z: 1535.3097}
+  - startNodeIndex: 18
+    endNodeIndex: 19
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1569.2977, y: 8.233535, z: 1558.7545}
+    - {x: 1567.3223, y: 8.233535, z: 1557.2584}
+    - {x: 1565.3468, y: 8.233535, z: 1555.7622}
+  - startNodeIndex: 18
+    endNodeIndex: 19
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1565.6752, y: 8.233535, z: 1563.5375}
+    - {x: 1563.6997, y: 8.233535, z: 1562.0414}
+    - {x: 1561.7242, y: 8.233535, z: 1560.5452}
+  - startNodeIndex: 19
+    endNodeIndex: 20
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1564.9686, y: 8.233535, z: 1555.5182}
+    - {x: 1562.0208, y: 8.233535, z: 1553.9153}
+    - {x: 1559.0729, y: 8.233535, z: 1552.3123}
+  - startNodeIndex: 19
+    endNodeIndex: 20
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1562.1024, y: 8.233535, z: 1560.7892}
+    - {x: 1559.1545, y: 8.233535, z: 1559.1863}
+    - {x: 1556.2067, y: 8.233535, z: 1557.5833}
+  - startNodeIndex: 20
+    endNodeIndex: 21
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1558.9266, y: 8.233535, z: 1552.2378}
+    - {x: 1553.5044, y: 8.233535, z: 1549.663}
+    - {x: 1548.082, y: 8.233535, z: 1547.0881}
+  - startNodeIndex: 20
+    endNodeIndex: 21
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1556.3529, y: 8.233535, z: 1557.6577}
+    - {x: 1550.9307, y: 8.233535, z: 1555.0829}
+    - {x: 1545.5083, y: 8.233535, z: 1552.508}
+  - startNodeIndex: 21
+    endNodeIndex: 22
+    side: 0
+    width: 3
+    sampledPoints:
+    - {x: 1548.1539, y: 8.233535, z: 1547.1234}
+    - {x: 1539.9764, y: 8.233535, z: 1542.969}
+    - {x: 1531.7988, y: 8.233535, z: 1538.8146}
+  - startNodeIndex: 21
+    endNodeIndex: 22
+    side: 1
+    width: 3
+    sampledPoints:
+    - {x: 1545.4364, y: 8.233535, z: 1552.4728}
+    - {x: 1537.2589, y: 8.233535, z: 1548.3184}
+    - {x: 1529.0813, y: 8.233535, z: 1544.164}

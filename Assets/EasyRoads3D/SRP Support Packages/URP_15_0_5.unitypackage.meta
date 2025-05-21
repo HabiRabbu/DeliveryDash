@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f4d880b575b08c74fbae306e36393414
+guid: 2eea70d7666fc5645954c8b7db7edf4c
 DefaultImporter:
   externalObjects: {}
   userData: 
@@ -7,8 +7,8 @@ DefaultImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 987
-  packageName: EasyRoads3D Free v3
+  productId: 469
+  packageName: EasyRoads3D Pro v3
   packageVersion: v3.2.4f3
   assetPath: Assets/EasyRoads3D/SRP Support Packages/URP_15_0_5.unitypackage
-  uploadId: 701396
+  uploadId: 728918
